@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 
 import HeaderLink from "Atoms/HeaderLink/HeaderLink";
 import HeaderLogo from "Atoms/HeaderLogo/HeaderLogo";
@@ -15,17 +15,30 @@ const getWindowWidth = (): number => {
   return width;
 };
 
-// Animation from framer-motion
+// Animation for container
 const variants = {
   open: {
+    height: "auto",
+    display: "flex",
     opacity: 1,
-    x: 0,
+    y: 0,
   },
-  closed: { opacity: 0, x: "-100%" },
+  closed: {
+    height: 0,
+    opacity: 0,
+    y: "-100%",
+    display: "none",
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+      when: "afterChildren",
+    },
+  },
 };
 
 const Header: React.FC = () => {
-  const [sideBar, setSideBar] = useState<boolean>(false);
+  // State for screen with and menu bar toggle
+  const [sideBar, setSideBar] = useCycle<boolean>(false, true);
   const [windowWidth, setWindowWidth] = useState<number>(getWindowWidth());
 
   // Get window with with every resize
@@ -37,36 +50,32 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [windowWidth]);
 
-  const onClick = () => {};
   return (
     <header className={styles.header}>
       <div className={styles.logoCon}>
         <HeaderLogo />
         <img
           src={Hamburger}
-          alt="hamburger"
+          alt="Menu toggle icon"
           className={styles.hamburger}
-          onClick={() => setSideBar(!sideBar)}
+          onClick={() => setSideBar()}
         />
       </div>
-      <motion.div
+      <motion.nav
         animate={!sideBar && windowWidth <= 900 ? "closed" : "open"}
         variants={variants}
         className={styles.navElements}
-        style={{
-          display: !sideBar && windowWidth <= 900 ? "none" : "flex",
-        }}
       >
-        <HeaderLink scrollElement="test" clicked={onClick}>
+        <HeaderLink scrollElement="test" clicked={() => setSideBar()}>
           Contact us
         </HeaderLink>
-        <HeaderLink scrollElement="test" clicked={onClick}>
+        <HeaderLink scrollElement="test" clicked={() => setSideBar()}>
           Our product
         </HeaderLink>
-        <HeaderLink scrollElement="test" clicked={onClick}>
+        <HeaderLink scrollElement="test" clicked={() => setSideBar()}>
           Stay updated
         </HeaderLink>
-      </motion.div>
+      </motion.nav>
     </header>
   );
 };
