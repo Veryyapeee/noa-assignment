@@ -66,7 +66,7 @@ const Header: React.FC = () => {
         <HeaderLink scrollElement="test" clicked={() => setSideBar()}>
           Contact us
         </HeaderLink>
-        <HeaderLink scrollElement="test" clicked={() => setSideBar()}>
+        <HeaderLink scrollElement="product" clicked={() => setSideBar()}>
           Our product
         </HeaderLink>
         <HeaderLink scrollElement="test" clicked={() => setSideBar()}>

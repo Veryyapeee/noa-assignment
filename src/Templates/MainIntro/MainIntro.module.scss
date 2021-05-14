@@ -12,12 +12,9 @@
     top: 90%;
     transform: translate(-50%, -90%);
     max-width: 450px;
-    min-width: 210px;
+    min-width: 250px;
     width: 40%;
     z-index: 1;
-    border-radius: 0.5em;
-    background: $bgCard;
-    padding: 0.7em;
     @media (max-width: 800px) {
       top: 100%;
       transform: translate(-50%, -100%);
