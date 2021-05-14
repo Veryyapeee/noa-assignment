@@ -19,18 +19,15 @@ const getWindowWidth = (): number => {
 const variants = {
   open: {
     height: "auto",
-    display: "flex",
     opacity: 1,
     y: 0,
   },
   closed: {
     height: 0,
     opacity: 0,
-    y: "-100%",
-    display: "none",
+    y: "-20%",
     transition: {
       staggerChildren: 0.05,
-      staggerDirection: -1,
       when: "afterChildren",
     },
   },
