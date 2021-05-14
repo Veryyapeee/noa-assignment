@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "./NewsletterTitle.module.scss";
-
 interface Props {
   children: string;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "Hooks/useForm";
 
 import WavesTop from "Atoms/WavesTop/WavesTop";
-import NewsletterTitle from "Atoms/NewsletterTitle/NewsletterTitle";
+import NewsletterTitle from "../../Atoms/NewsletterTitle/NewsletterTitle";
 import Form from "Organism/Form/Form";
 
 import styles from "./Newsletter.module.scss";
