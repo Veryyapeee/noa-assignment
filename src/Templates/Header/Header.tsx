@@ -69,7 +69,7 @@ const Header: React.FC = () => {
         <HeaderLink scrollElement="product" clicked={() => setSideBar()}>
           Our product
         </HeaderLink>
-        <HeaderLink scrollElement="test" clicked={() => setSideBar()}>
+        <HeaderLink scrollElement="newsletter" clicked={() => setSideBar()}>
           Stay updated
         </HeaderLink>
       </motion.nav>
