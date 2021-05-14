@@ -1,18 +1,10 @@
-interface Rules {
-    required?: boolean;
-    minLength?: number;
-    maxLength?: number;
-    minDate?: Date;
-    emailComplexity?: boolean;
-    passwordComplexity?: boolean;
-}
-
+import { Validation, Form } from 'Utils/types';
 
 /* Input data validation 
   @param {value} - input value
   @param {rules} - object with validation rules
 */
-export const validation = (value: string, rules?: Rules) => {
+export const validation = (value: string, rules?: Validation) => {
     let isValid: boolean | null = true;
     if (!rules) {
         return true;
@@ -28,7 +20,11 @@ export const validation = (value: string, rules?: Rules) => {
     }
 
     if (rules.emailComplexity) {
+        // Test valid email
         isValid = value.match(/\S+@\S+\.\S+/) && isValid;
+        // Check for white spaces
+        isValid = !/\s/.test(value) && isValid;
+        console.log(isValid);
     }
 
     return isValid === null ? false : isValid;
@@ -38,7 +34,7 @@ export const validation = (value: string, rules?: Rules) => {
 /* Check if every input is valid
   @param {fields} - object with all form fields
 */
-export const wholeFormValidity = (fields: any) => {
+export const wholeFormValidity = (fields: Form) => {
     let key: keyof typeof fields;
     for (key in fields) {
         if (fields[key].valid === false) {

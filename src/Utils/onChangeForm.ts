@@ -1,5 +1,7 @@
+import { Dispatch, SetStateAction } from "react";
 import { validation, wholeFormValidity } from './validation';
 import { mutateState } from './mutate';
+import { Form } from 'Utils/types';
 
 /* Main onChange action creator
     @param {e} - event target
@@ -7,7 +9,7 @@ import { mutateState } from './mutate';
     @param {state} - state
     @param {checkPass} - boolean value to pass if we have to check if passwords are matching
 */
-const OnChangeForm = (e: { target: HTMLInputElement }, inputType: string, state: any, setState: any): boolean => {
+const OnChangeForm = (e: { target: HTMLInputElement }, inputType: string, state: Form, setState: Dispatch<SetStateAction<Form>>): boolean => {
 
     // Make state copy with new value
     const stateCopy = {
@@ -19,7 +21,7 @@ const OnChangeForm = (e: { target: HTMLInputElement }, inputType: string, state:
 
     // Run validation and update functions
     const valid: boolean = validation(e.target.value, stateCopy[inputType].validation);
-    const updatedFields: any = mutateState(e.target.value, inputType, stateCopy, valid);
+    const updatedFields: Form = mutateState(e.target.value, inputType, stateCopy, valid);
     const validForm: boolean = wholeFormValidity(updatedFields);
 
     // Set new state

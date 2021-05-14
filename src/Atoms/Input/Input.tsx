@@ -2,17 +2,16 @@ import React from "react";
 
 import styles from "./Input.module.scss";
 
+import { Form } from "Utils/types";
+
 interface Props {
   type: string;
-  inputType: string;
   val: string;
-  inputName: string;
-  placeholder: string;
   label: string;
   valid: boolean;
   touched: boolean;
-  stateMain: any;
-  onChangeInput: () => void;
+  stateMain: Form;
+  onChangeInput: (e: { target: HTMLInputElement }) => void;
   errorMessage: string;
 }
 

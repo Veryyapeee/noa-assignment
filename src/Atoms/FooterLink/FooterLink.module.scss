@@ -1,0 +1,12 @@
+@import "Styles/variables.scss";
+
+.link {
+  font-family: $fontRoboto;
+  text-decoration: none;
+  color: $fontBlack;
+  font-size: 0.9em;
+  font-weight: 500;
+  &:hover {
+    color: $fontHoverLink;
+  }
+}
