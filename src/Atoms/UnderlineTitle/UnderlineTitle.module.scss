@@ -1,0 +1,18 @@
+@import "Styles/variables.scss";
+
+.title {
+  font-family: $fontRoboto;
+  font-weight: 500;
+  position: relative;
+  font-size: 1.1em;
+  &::after {
+    content: "";
+    height: 0.25em;
+    width: 3em;
+    background: $bgRed;
+    border-radius: 1.2em;
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+  }
+}
