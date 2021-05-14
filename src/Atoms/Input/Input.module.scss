@@ -1,0 +1,65 @@
+@import "Styles/variables.scss";
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  .label {
+    transition: 0.1s;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 50%);
+    color: $fontLabel;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .input {
+    color: $fontInput;
+    max-width: 320px;
+    width: 100%;
+    border: 2px solid $fontInput;
+    appearance: none;
+    background: transparent;
+    padding: 0.8em;
+    border-radius: 0.2em;
+    outline: none;
+    transition: border-color 0.1s ease-out;
+    @media (max-width: 650px) {
+      width: 90%;
+    }
+    &:focus + .label,
+    &:valid + .label {
+      transition: 0.1s;
+      right: 50%;
+      transform: translate(50%, -50%);
+      font-size: 0.8em;
+      color: $bgRed;
+      background: $bgWhite;
+      padding: 0 0.8em;
+    }
+    &:focus,
+    &:valid {
+      border-color: $bgRed;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.invalidInput {
+  .input {
+    border-color: $inputInvalid;
+    color: $inputInvalid;
+    &:focus {
+      border-color: $inputInvalid;
+      color: $inputInvalid;
+    }
+  }
+  .label {
+    color: $inputInvalid !important;
+  }
+}
