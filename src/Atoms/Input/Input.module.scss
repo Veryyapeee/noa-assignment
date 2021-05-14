@@ -1,6 +1,7 @@
 @import "Styles/variables.scss";
 
 .container {
+  font-family: $fontRoboto;
   width: 100%;
   max-width: 320px;
   display: flex;
@@ -10,8 +11,9 @@
   .label {
     transition: 0.1s;
     position: absolute;
-    right: 50%;
-    transform: translate(50%, 50%);
+    right: 40%;
+    top: 50%;
+    transform: translateY(-50%);
     color: $fontLabel;
     &:hover {
       cursor: pointer;
@@ -62,4 +64,12 @@
   .label {
     color: $inputInvalid !important;
   }
+}
+
+.inputErrorMessage {
+  font-weight: 500;
+  font-size: 0.8em;
+  color: $inputInvalid;
+  position: absolute;
+  top: 120%;
 }

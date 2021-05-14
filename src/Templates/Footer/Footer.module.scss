@@ -1,5 +1,11 @@
 @import "Styles/variables.scss";
 
 .footer {
-  background: white;
+  background: $bgLightGrey;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  padding: 2em 4em;
+  gap: 3em;
 }
