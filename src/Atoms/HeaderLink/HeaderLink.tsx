@@ -37,6 +37,7 @@ const HeaderLink: React.FC<Props> = ({ children, scrollElement, clicked }) => {
         smooth={true}
         spy={true}
         onClick={clicked}
+        offset={-100}
       >
         {children}
       </Link>
