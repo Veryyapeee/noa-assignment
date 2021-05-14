@@ -2,8 +2,11 @@
 
 .newsletterCon {
   position: relative;
-  height: 500px;
+  height: 700px;
   background: $bgRed;
+  @media (max-width: 1000px) {
+    height: 500px;
+  }
   .contentMainCon {
     position: relative;
     box-shadow: $lightShadow;

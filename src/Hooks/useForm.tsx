@@ -2,9 +2,13 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 import { mutateFormData } from "Utils/mutate";
 
-const useForm = (state: any): [any, Dispatch<SetStateAction<any>>, any] => {
-  const [form, setForm] = useState<any>(state);
-  const data: any = mutateFormData(form);
+import { Form, FormData } from "Utils/types";
+
+const useForm = (
+  state: Form
+): [Form, Dispatch<SetStateAction<Form>>, FormData] => {
+  const [form, setForm] = useState<Form>(state);
+  const data: FormData = mutateFormData(form);
   return [form, setForm, data];
 };
 

@@ -11,9 +11,9 @@
   .label {
     transition: 0.1s;
     position: absolute;
-    right: 40%;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     color: $fontLabel;
     &:hover {
       cursor: pointer;
@@ -30,14 +30,10 @@
     border-radius: 0.2em;
     outline: none;
     transition: border-color 0.1s ease-out;
-    @media (max-width: 650px) {
-      width: 90%;
-    }
     &:focus + .label,
     &:valid + .label {
       transition: 0.1s;
-      right: 50%;
-      transform: translate(50%, -50%);
+      top: 0;
       font-size: 0.8em;
       color: $bgRed;
       background: $bgWhite;
