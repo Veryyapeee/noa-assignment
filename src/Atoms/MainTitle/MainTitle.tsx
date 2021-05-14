@@ -7,7 +7,7 @@ interface Props {
 }
 
 const MainTitle: React.FC<Props> = ({ children }) => {
-  return <span className={styles.title}>{children}</span>;
+  return <h1 className={styles.title}>{children}</h1>;
 };
 
 export default MainTitle;
