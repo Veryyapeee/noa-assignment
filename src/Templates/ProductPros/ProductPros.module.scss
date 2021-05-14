@@ -1,0 +1,33 @@
+.prosCon {
+  position: absolute;
+  width: 100%;
+  padding: 3em;
+  .cardCon {
+    width: 50%;
+    margin: 0 auto;
+    min-width: 250px;
+    max-width: 750px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1em;
+    @media (min-width: 900px) {
+      width: 80%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      :nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+  }
+  .smoothieImg {
+    position: absolute;
+    transform: rotate(-20deg);
+    bottom: 1em;
+    right: 1em;
+    height: 10em;
+    width: auto;
+    @media (max-width: 450px) {
+      height: 7em;
+    }
+  }
+}

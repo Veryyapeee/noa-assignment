@@ -1,0 +1,43 @@
+@import "Styles/variables.scss";
+
+.link {
+  list-style: none;
+  font-weight: 500;
+  height: 100%;
+  font-family: $fontRoboto;
+  font-size: 1em;
+  a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 1em 0;
+    transition: color 0.1s, background-color 0.1s;
+    color: $fontNav;
+    &:hover {
+      color: $fontNavHover;
+      cursor: pointer;
+    }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 75%;
+      height: 2px;
+      width: 100%;
+      background-color: $fontNavHover;
+      transform-origin: left top;
+      transform: scale(0, 1);
+      transition: color 0.1s, transform 0.2s ease-out;
+    }
+    &:active::before {
+      background-color: $fontNavHover;
+    }
+    &:hover::before,
+    &:focus::before {
+      transform-origin: left top;
+      transform: scale(1, 1);
+    }
+  }
+}
+.linkAcrive {
+}

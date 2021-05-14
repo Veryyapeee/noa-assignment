@@ -1,0 +1,23 @@
+@import "Styles/variables.scss";
+
+.mainWrapper {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  .cardCon {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -90%);
+    max-width: 450px;
+    min-width: 250px;
+    width: 40%;
+    z-index: 1;
+    @media (max-width: 800px) {
+      top: 100%;
+      transform: translate(-50%, -100%);
+    }
+  }
+}

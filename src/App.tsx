@@ -2,8 +2,8 @@ import React from "react";
 
 import LandingPage from "Pages/LandingPage/LandingPage";
 
-function App() {
+const App = () => {
   return <LandingPage />;
-}
+};
 
 export default App;
