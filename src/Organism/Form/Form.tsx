@@ -1,6 +1,6 @@
 import React, { useEffect, useState, SetStateAction, Dispatch } from "react";
 
-import Input from "Atoms/Input/Input";
+import Input from "Molecules/Input/Input";
 import Button from "Atoms/Button/Button";
 
 import onChangeForm from "Utils/onChangeForm";

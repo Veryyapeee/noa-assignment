@@ -11,11 +11,13 @@
   position: fixed;
   z-index: 999;
   .navElements {
-    display: flex;
-    flex-direction: row;
-    gap: 4em;
-    align-items: center;
     background: $bgLightGrey;
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 4em;
+      align-items: center;
+    }
   }
   .logoCon {
     display: flex;
@@ -36,11 +38,13 @@
     align-items: center;
     .navElements {
       margin-top: 2em;
-      display: flex;
-      gap: 2em;
-      width: 100%;
-      flex-direction: column;
       position: relative;
+      ul {
+        display: flex;
+        gap: 2em;
+        width: 100%;
+        flex-direction: column;
+      }
     }
     .logoCon {
       position: relative;

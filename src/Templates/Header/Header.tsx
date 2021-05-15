@@ -62,16 +62,21 @@ const Header: React.FC = () => {
         animate={!sideBar && windowWidth <= 900 ? "closed" : "open"}
         variants={variants}
         className={styles.navElements}
+        style={{
+          pointerEvents: !sideBar && windowWidth <= 900 ? "none" : "all",
+        }}
       >
-        <HeaderLink scrollElement="footer" clicked={() => setSideBar()}>
-          Contact us
-        </HeaderLink>
-        <HeaderLink scrollElement="product" clicked={() => setSideBar()}>
-          Our product
-        </HeaderLink>
-        <HeaderLink scrollElement="newsletter" clicked={() => setSideBar()}>
-          Stay updated
-        </HeaderLink>
+        <motion.ul>
+          <HeaderLink scrollElement="footer" clicked={() => setSideBar()}>
+            Contact us
+          </HeaderLink>
+          <HeaderLink scrollElement="product" clicked={() => setSideBar()}>
+            Our product
+          </HeaderLink>
+          <HeaderLink scrollElement="newsletter" clicked={() => setSideBar()}>
+            Stay updated
+          </HeaderLink>
+        </motion.ul>
       </motion.nav>
     </header>
   );

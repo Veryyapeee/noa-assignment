@@ -3,8 +3,8 @@ import React from "react";
 import Card from "Molecules/Card/Card";
 import MainTitle from "Atoms/MainTitle/MainTitle";
 import CardText from "Atoms/CardText/CardText";
+import TitleIcon from "Atoms/TitleIcon/TitleIcon";
 
-import styles from "./CardPros.module.scss";
 interface Props {
   children: string | string[];
   title: string;
@@ -17,7 +17,7 @@ const CardPros: React.FC<Props> = ({ children, title, image, altForImage }) => {
     <Card>
       <MainTitle>
         {title}
-        <img src={image} alt={altForImage} className={styles.icon} />
+        <TitleIcon src={image} alt={altForImage} />
       </MainTitle>
       <CardText>{children}</CardText>
     </Card>
